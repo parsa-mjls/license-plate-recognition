@@ -1,0 +1,24 @@
+# Core deep learning / detection
+# NOTE: these torch wheels are built for CUDA 11.8. If you install on CPU-only
+# or a different CUDA version, install torch/torchvision from
+# https://pytorch.org/get-started/locally/ instead of this line, then install
+# the rest of this file with `pip install -r requirements.txt --no-deps` for
+# the torch lines, or simply delete the two torch lines below first.
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.1.2+cu118
+torchvision==0.16.2+cu118
+
+ultralytics==8.4.115
+
+# OCR engine (Persian/Farsi plate text recognition)
+paddlepaddle-gpu==2.5.2
+paddleocr==2.9.1
+
+# Image processing / rendering
+opencv-python==4.11.0.86
+numpy==1.26.4
+pillow==11.3.0
+
+# Persian/Arabic RTL text shaping
+arabic-reshaper==3.0.0
+python-bidi==0.6.11
