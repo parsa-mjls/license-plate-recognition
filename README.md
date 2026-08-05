@@ -32,7 +32,8 @@ PaddleOCR/PaddlePaddle and PyTorch can conflict when imported in the same Python
 ```
 license-plate-recognition/
 ├── assets/
-│   └── fonts/              # Persian-capable .ttf font (e.g. Vazir.ttf) — not included, see Setup
+│   ├── some of output             
+│   └── fonts/          # Persian-capable .ttf font (e.g. Vazir.ttf) — not included, see Setup
 ├── examples/
 │   ├── images/             # sample input images go here
 │   └── videos/             # sample input videos go here
@@ -79,7 +80,7 @@ The trained model weights are **not included** in this repository (they belong t
 
 1. **Detector weights** — place a YOLO `.pt` file at `models/detector/best.pt` (or update `DETECTOR_MODEL_PATH` in `src/config.py`). Any YOLO model that outputs a "vehicle"/"plate" class will work; adjust `ALLOWED_CLASSES` in `config.py` to match your model's class ids.
 2. **OCR model** — place your PaddleOCR recognition model directory at `models/ocr/rec_model/` and its character dictionary at `models/ocr/dict.txt` (or update `OCR_MODEL_DIR` / `OCR_DICT_PATH` in `src/config.py`).
-3. **Font** — download a Persian-capable TrueType font (e.g. [Vazir](https://github.com/rastikerdar/vazir-font)) and place it at `assets/fonts/Vazir.ttf`, or point `FONT_PATH` in `config.py` to any `.ttf` on your system. A few common Windows font fallbacks are already configured in `FALLBACK_FONTS`.
+3. **Font (optional)** — nothing to do here by default: `FALLBACK_FONTS` in `config.py` already points to standard Windows fonts (Tahoma/Arial/Segoe UI) that render Persian/Arabic text correctly, so plate labels work out of the box on Windows. Only add a custom font (e.g. [Vazir](https://github.com/rastikerdar/vazir-font)) at `assets/fonts/Vazir.ttf` if you specifically want a different look.
 
 All of the above are configured in **one place**: [`src/config.py`](./src/config.py).
 
